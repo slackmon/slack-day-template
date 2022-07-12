@@ -16,13 +16,13 @@ jobs:
         run: deno --version
 
       - name: Download slack-cli (v1.5.0)
-        run: curl https://slack.com/cloud/static/common/cli/slack_cli_1.5.0_linux_64-bit.tar.gz --output slack_cli_1.5.0_linux_64-bit.tar.gz
+        run: curl https://slack.com/cloud/static/common/cli/slack_cli_1.5.0_linux_64-bit.tar.gz --output ./slack_cli_1.5.0_linux_64-bit.tar.gz
+      
+      - name: Debug ls
+        run: ls -lha
 
       - name: Unzip slack-cli
-        run: tar xvf slack_cli_1.5.0_linux_64-bit.tar.gz
-
-      - name: Copy slack-cli executable to /user/local/bin
-        run: cp ./bin/slack to /usr/local/bin/slack
+        run: tar xvf ./slack_cli_1.5.0_linux_64-bit.tar.gz
 
       - name: Validate slack-cli installation
-        run: slack version
+        run: ./bin/slack version
