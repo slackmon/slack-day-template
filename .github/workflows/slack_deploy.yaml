@@ -19,7 +19,7 @@ jobs:
         run: curl https://slack.com/cloud/static/common/cli/slack_cli_1.5.0_linux_64-bit.tar.gz --output slack_cli_1.5.0_linux_64-bit.tar.gz
       
       - name: Unzip slack-cli
-        run: tar -xf slack_cli_1.5.0_linux_64-bit.tar.gz
+        run: tar xvzf slack_cli_1.5.0_linux_64-bit.tar.gz
 
       - name: Copy slack-cli executable to /user/local/bin
         run: cp ./slack_cli_1.5.0_linux_64-bit/bin/slack to /usr/local/bin/slack
