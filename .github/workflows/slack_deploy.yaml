@@ -4,8 +4,9 @@ jobs:
   install_cli:
     runs-on: ubuntu-latest
     steps:
-      - name: Install deno dependencies
-        run: curl -fsSL https://deno.land/x/install/install.sh | sh
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
       
       - name: Validate deno installation
         run: deno --version
