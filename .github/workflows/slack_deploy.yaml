@@ -1,9 +1,9 @@
 name: Slack App Deploy
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 jobs:
   install_cli:
     runs-on: ubuntu-latest
